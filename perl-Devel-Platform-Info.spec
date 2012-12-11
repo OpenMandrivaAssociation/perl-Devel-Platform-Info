@@ -1,20 +1,21 @@
 %define upstream_name    Devel-Platform-Info
 %define upstream_version 0.09
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	2
 
-Summary:    Retrieve Solaris platform metadata
-License:    GPL+ or Artistic
-Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/Devel/%{upstream_name}-%{upstream_version}.tar.gz
+Summary:	Retrieve Solaris platform metadata
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Devel/%{upstream_name}-%{upstream_version}.tar.gz
 
-BuildRequires: perl(IO::File)
-BuildRequires: perl(Test::Builder::Tester)
-BuildRequires: perl(Test::More) >= 0.700.0
-BuildArch:  noarch
+BuildRequires:	perl-devel
+BuildRequires:	perl(IO::File)
+BuildRequires:	perl(Test::Builder::Tester)
+BuildRequires:	perl(Test::More) >= 0.700.0
+BuildArch:	noarch
 
 %description
 This module is a wrapper to the drivers which can determine platform
@@ -33,22 +34,22 @@ the usage for CPAN Testers.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
 %make test
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc Changes META.json META.yml README examples
 %{_mandir}/man3/*
-%perl_vendorlib/*
+%{perl_vendorlib}/*
+
+%changelog
+* Fri Jul 08 2011 Sandro Cazzaniga <kharec@mandriva.org> 0.90.0-1mdv2011
++ Revision: 689342
+- import perl-Devel-Platform-Info
+
