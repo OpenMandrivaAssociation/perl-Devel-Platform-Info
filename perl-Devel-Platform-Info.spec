@@ -1,15 +1,16 @@
 %define upstream_name    Devel-Platform-Info
-%define upstream_version 0.11
+%define upstream_version 0.14
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
 Release:	1
 
 Summary:	Retrieve Solaris platform metadata
+
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Devel/Devel-Platform-Info-%{upstream_version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Devel/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(IO::File)
@@ -47,10 +48,5 @@ perl Makefile.PL INSTALLDIRS=vendor
 %doc Changes META.json META.yml README examples
 %{_mandir}/man3/*
 %{perl_vendorlib}/*
-
-%changelog
-* Fri Jul 08 2011 Sandro Cazzaniga <kharec@mandriva.org> 0.90.0-1mdv2011
-+ Revision: 689342
-- import perl-Devel-Platform-Info
 
 
