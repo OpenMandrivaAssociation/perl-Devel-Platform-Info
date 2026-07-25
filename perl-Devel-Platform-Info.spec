@@ -1,16 +1,16 @@
 %define upstream_name    Devel-Platform-Info
-%define upstream_version 0.14
+%define upstream_version 1.00
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Version:	%{upstream_version}
+Release:	1
 
 Summary:	Retrieve Solaris platform metadata
 
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Devel/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://github.com/barbie/devel-platform-info
+Source0:	https://cpan.metacpan.org/authors/id/B/BA/BARBIE/Devel-Platform-Info-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
