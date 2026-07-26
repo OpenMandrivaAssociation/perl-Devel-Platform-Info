@@ -1,16 +1,14 @@
 %define upstream_name    Devel-Platform-Info
-%define upstream_version 1.00
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	1
+Version:	1.00
+Release:	2
 
 Summary:	Retrieve Solaris platform metadata
 
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://github.com/barbie/devel-platform-info
-Source0:	https://cpan.metacpan.org/authors/id/B/BA/BARBIE/Devel-Platform-Info-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/B/BA/BARBIE/Devel-Platform-Info-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -33,7 +31,7 @@ However, it is hoped that this distribution will find more uses far beyond
 the usage for CPAN Testers.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
